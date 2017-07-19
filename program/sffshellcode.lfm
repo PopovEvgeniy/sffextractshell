@@ -1,0 +1,101 @@
+object Form1: TForm1
+  Left = 151
+  Height = 315
+  Top = 155
+  Width = 606
+  Caption = 'Form1'
+  ClientHeight = 315
+  ClientWidth = 606
+  OnCreate = FormCreate
+  LCLVersion = '1.0.2.0'
+  object LabeledEdit1: TLabeledEdit
+    Left = 72
+    Height = 21
+    Top = 40
+    Width = 408
+    EditLabel.AnchorSideLeft.Control = LabeledEdit1
+    EditLabel.AnchorSideRight.Control = LabeledEdit1
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = LabeledEdit1
+    EditLabel.Left = 72
+    EditLabel.Height = 14
+    EditLabel.Top = 23
+    EditLabel.Width = 408
+    EditLabel.Caption = 'File'
+    EditLabel.ParentColor = False
+    TabOrder = 0
+    Text = 'LabeledEdit1'
+    OnChange = LabeledEdit1Change
+  end
+  object Button1: TButton
+    Left = 488
+    Height = 25
+    Top = 36
+    Width = 91
+    Caption = 'Open'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object CheckBox1: TCheckBox
+    Left = 16
+    Height = 17
+    Top = 88
+    Width = 79
+    Caption = 'Ignore error'
+    TabOrder = 2
+  end
+  object CheckBox2: TCheckBox
+    Left = 16
+    Height = 17
+    Top = 120
+    Width = 111
+    Caption = 'Use shared palette'
+    TabOrder = 3
+  end
+  object CheckBox3: TCheckBox
+    Left = 16
+    Height = 17
+    Top = 152
+    Width = 140
+    Caption = 'Put sprite in subdirectory'
+    TabOrder = 4
+  end
+  object Button2: TButton
+    Left = 88
+    Height = 25
+    Top = 280
+    Width = 127
+    Caption = 'Extract'
+    OnClick = Button2Click
+    TabOrder = 5
+  end
+  object CheckBox4: TCheckBox
+    Left = 16
+    Height = 17
+    Top = 184
+    Width = 117
+    Caption = 'Use short file names'
+    TabOrder = 6
+  end
+  object CheckBox5: TCheckBox
+    Left = 16
+    Height = 17
+    Top = 216
+    Width = 209
+    Caption = 'Use hexadecimal numbers as file names'
+    TabOrder = 7
+  end
+  object CheckBox6: TCheckBox
+    Left = 16
+    Height = 17
+    Top = 245
+    Width = 196
+    Caption = 'File designed for MUGEN 2001.04.14'
+    TabOrder = 8
+  end
+  object OpenDialog1: TOpenDialog
+    OnCanClose = OpenDialog1CanClose
+    left = 376
+    top = 264
+  end
+end
