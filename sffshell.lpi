@@ -1,14 +1,12 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="9"/>
+    <Version Value="10"/>
     <PathDelim Value="\"/>
     <General>
       <MainUnit Value="0"/>
       <ResourceType Value="res"/>
-      <UseXPManifest Value="True"/>
       <Icon Value="0"/>
-      <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
@@ -42,7 +40,6 @@
       <Unit0>
         <Filename Value="sffshell.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="sffshell"/>
         <UsageCount Value="22"/>
       </Unit0>
       <Unit1>
@@ -51,12 +48,9 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="sffshellcode"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="0"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="187"/>
-        <CursorPos X="51" Y="209"/>
+        <TopLine Value="188"/>
+        <CursorPos X="73" Y="190"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -89,11 +83,11 @@
       </Position6>
       <Position7>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="8" Column="29" TopLine="1"/>
+        <Caret Line="8" Column="29"/>
       </Position7>
       <Position8>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="16" Column="30" TopLine="1"/>
+        <Caret Line="16" Column="30"/>
       </Position8>
     </JumpHistory>
   </ProjectOptions>
@@ -112,6 +106,9 @@
       <TargetProcessor Value="80386"/>
       <TargetCPU Value="i386"/>
       <TargetOS Value="win32"/>
+      <Optimizations>
+        <OptimizationLevel Value="0"/>
+      </Optimizations>
     </CodeGeneration>
     <Linking>
       <Debugging>
@@ -125,12 +122,6 @@
         </Win32>
       </Options>
     </Linking>
-    <Other>
-      <CompilerMessages>
-        <UseMsgFile Value="True"/>
-      </CompilerMessages>
-      <CompilerPath Value="$(CompPath)"/>
-    </Other>
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="3">

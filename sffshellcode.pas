@@ -5,7 +5,7 @@ unit sffshellcode;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Dialogs, ExtCtrls, StdCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Dialogs, ExtCtrls, StdCtrls, LazUTF8;
 
 type
 
@@ -26,7 +26,6 @@ type
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure LabeledEdit1Change(Sender: TObject);
-    procedure OpenDialog1CanClose(Sender: TObject; var CanClose: boolean);
   private
     { private declarations }
   public
@@ -79,12 +78,10 @@ convert_file_name:=target;
 end;
 
 function execute_program(executable:string;argument:string):Integer;
-var parametrs:string;
 var code:Integer;
 begin
-parametrs:=UTF8ToSys(argument);
 try
-code:=ExecuteProcess(executable,parametrs,[]);
+code:=ExecuteProcess(UTF8ToWinCP(executable),UTF8ToWinCP(argument),[]);
 except
 On EOSError do code:=-1;
 end;
@@ -94,7 +91,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Form1.Caption:='SFFEXTRACT SHELL 2.5.8';
+ Form1.Caption:='SFFEXTRACT SHELL 2.6';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -188,14 +185,9 @@ begin
 Button2.Enabled:=check_input(LabeledEdit1.Text);
 end;
 
-procedure TForm1.OpenDialog1CanClose(Sender: TObject; var CanClose: boolean);
-begin
-LabeledEdit1.Text:=OpenDialog1.FileName;
-end;
-
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-OpenDialog1.Execute();
+if Form1.OpenDialog1.Execute()=True then Form1.LabeledEdit1.Text:=Form1.OpenDialog1.FileName;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -206,7 +198,7 @@ argument:=parser_argument();
 argument:=argument+convert_file_name(LabeledEdit1.Text);
 if execute_program(host,argument)=-1 then
 begin
-ShowMessage('Can not execute a external program');
+ShowMessage('Cant execute a external program');
 end;
 
 end;
