@@ -25,7 +25,6 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure LabeledEdit1Change(Sender: TObject);
   private
     { private declarations }
   public
@@ -34,7 +33,6 @@ type
 
 var Form1: TForm1;
 function get_path(): string;
-function check_input(input:string):Boolean;
 function convert_file_name(source:string): string;
 function execute_program(executable:string;argument:string):Integer;
 procedure window_setup();
@@ -43,7 +41,7 @@ procedure interface_setup();
 procedure common_setup();
 procedure language_setup();
 procedure setup();
-function parser_argument():string;
+function get_options():string;
 
 implementation
 
@@ -52,17 +50,6 @@ implementation
 function get_path(): string;
 begin
 get_path:=ExtractFilePath(Application.ExeName);
-end;
-
-function check_input(input:string):Boolean;
-var target:Boolean;
-begin
-target:=True;
-if input='' then
-begin
-target:=False;
-end;
-check_input:=target;
 end;
 
 function convert_file_name(source:string): string;
@@ -91,7 +78,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Form1.Caption:='SFFEXTRACT SHELL 2.6';
+ Form1.Caption:='SFFEXTRACT SHELL 2.6.2';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -142,35 +129,25 @@ common_setup();
 language_setup();
 end;
 
-function parser_argument():string;
-var argument:string;
+function get_options():string;
+var options:string;
 begin
-argument:='-i -p ';
-if Form1.CheckBox1.Checked=True then
-begin
-argument:=argument+'-f ';
+options:='-i -p ';
+if Form1.CheckBox1.Checked=True then options:=options+'-f ';
+if Form1.CheckBox2.Checked=True then options:=options+'-1 ';
+if Form1.CheckBox3.Checked=True then options:=options+'-d ';
+if Form1.CheckBox4.Checked=True then options:=options+'-8 ';
+if Form1.CheckBox5.Checked=True then options:=options+'-x ';
+if Form1.CheckBox6.Checked=True then options:=options+'-n ';
+get_options:=options;
 end;
-if Form1.CheckBox2.Checked=True then
+
+procedure do_job(target:string);
+var backend,options:string;
 begin
-argument:=argument+'-1 ';
-end;
-if Form1.CheckBox3.Checked=True then
-begin
-argument:=argument+'-d ';
-end;
-if Form1.CheckBox4.Checked=True then
-begin
-argument:=argument+'-8 ';
-end;
-if Form1.CheckBox5.Checked=True then
-begin
-argument:=argument+'-x ';
-end;
-if Form1.CheckBox6.Checked=True then
-begin
-argument:=argument+'-n ';
-end;
-parser_argument:=argument;
+backend:=get_path()+'sffextract';
+options:=get_options()+convert_file_name(target);
+if execute_program(backend,options)=-1 then ShowMessage('Cant run an external program');
 end;
 
 { TForm1 }
@@ -180,27 +157,19 @@ begin
 setup();
 end;
 
-procedure TForm1.LabeledEdit1Change(Sender: TObject);
-begin
-Button2.Enabled:=check_input(LabeledEdit1.Text);
-end;
-
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-if Form1.OpenDialog1.Execute()=True then Form1.LabeledEdit1.Text:=Form1.OpenDialog1.FileName;
+if Form1.OpenDialog1.Execute()=True then
+begin
+Form1.Button2.Enabled:=True;
+Form1.LabeledEdit1.Text:=Form1.OpenDialog1.FileName;
+end;
+
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
-var host,argument:string;
 begin
-host:=get_path()+'sffextract';
-argument:=parser_argument();
-argument:=argument+convert_file_name(LabeledEdit1.Text);
-if execute_program(host,argument)=-1 then
-begin
-ShowMessage('Cant execute a external program');
-end;
-
+do_job(Form1.LabeledEdit1.Text);
 end;
 
 end.
