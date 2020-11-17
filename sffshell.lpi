@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <PathDelim Value="\"/>
     <General>
       <MainUnit Value="0"/>
@@ -11,14 +11,14 @@
     <i18n>
       <EnableI18N LFM="False"/>
     </i18n>
-    <BuildModes Count="2" Active="Windows 64 bit">
+    <BuildModes Count="2" Active="Windows 32 bit">
       <Item1 Name="Windows 32 bit" Default="True"/>
       <Item2 Name="Windows 64 bit">
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="64\sffshell"/>
+            <Filename Value="sffshell64"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -49,13 +49,12 @@
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
-      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
-      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
     </PublishOptions>
     <RunParams>
-      <local>
-        <FormatVersion Value="1"/>
-      </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
     </RunParams>
     <RequiredPackages Count="2">
       <Item1>
@@ -79,14 +78,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="139"/>
-        <CursorPos X="40" Y="81"/>
+        <TopLine Value="148"/>
+        <CursorPos X="2" Y="179"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="8" HistoryIndex="7">
+    <JumpHistory Count="10" HistoryIndex="9">
       <Position1>
         <Filename Value="sffshellcode.pas"/>
         <Caret Line="154" Column="23" TopLine="143"/>
@@ -119,13 +118,21 @@
         <Filename Value="sffshellcode.pas"/>
         <Caret Line="16" Column="30"/>
       </Position8>
+      <Position9>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="171" Column="53" TopLine="160"/>
+      </Position9>
+      <Position10>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="176" TopLine="161"/>
+      </Position10>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="32\sffshell"/>
+      <Filename Value="sffshell"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
