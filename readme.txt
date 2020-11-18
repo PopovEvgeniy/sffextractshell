@@ -1,6 +1,6 @@
                                 SFFEXTRACT SHELL
 
-                                  Version 2.6.3
+                                  Version 2.6.4
 
                          This software made by Popov Evgeniy Alekseyevich
 
@@ -40,3 +40,4 @@ Change log
 2.5.8 - Small changes.
 2.5.9 - Small changes. Windows 9x support was dropped.
 2.6 - 2.6.3 - Small changes.
+2.6.4 - Small bug was fixed.
