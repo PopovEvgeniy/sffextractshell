@@ -1,6 +1,6 @@
                                 SFFEXTRACT SHELL
 
-                                  Version 2.6.4
+                                  Version 2.6.5
 
                          This software made by Popov Evgeniy Alekseyevich
 
@@ -28,8 +28,8 @@ You can send me a letter to tuzik87@inbox.ru
 
 About program modification
 
-Source code is included in source.zip archive.
-It can be compiled under Lazarus 2.0.10 or higher.
+Source code included in source.zip archive.
+It can be compiled under Lazarus 2.2.2 or higher.
 
 Change log
 
@@ -38,6 +38,7 @@ Change log
 2.5.6 - Small changes.
 2.5.7 - Russian localization removed.
 2.5.8 - Small changes.
-2.5.9 - Small changes. Windows 9x support was dropped.
+2.5.9 - Small changes. Windows 9x support dropped.
 2.6 - 2.6.3 - Small changes.
-2.6.4 - Small bug was fixed.
+2.6.4 - Small bug fixed.
+2.6.5 - Small changes.
