@@ -6,8 +6,8 @@
 
 System requirement
 
-Windows 2000 or higher for 32 bit system
-Windows Vista or higher for 64 bit system
+Windows 2000 or higher for 32-bit system
+Windows Vista or higher for 64-bit system
 
 Program description
 
@@ -42,3 +42,4 @@ Change log
 2.6 - 2.6.3 - Small changes.
 2.6.4 - Small bug fixed.
 2.6.5 - Small changes.
+2.6.5.1 - Documentation updated.
