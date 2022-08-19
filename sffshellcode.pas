@@ -70,7 +70,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Form1.Caption:='SFFEXTRACT SHELL 2.6.5';
+ Form1.Caption:='SFFEXTRACT SHELL 2.6.6';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -94,13 +94,6 @@ begin
  Form1.LabeledEdit1.Text:='';
 end;
 
-procedure common_setup();
-begin
- window_setup();
- dialog_setup();
- interface_setup();
-end;
-
 procedure language_setup();
 begin
  Form1.LabeledEdit1.EditLabel.Caption:='File';
@@ -117,7 +110,9 @@ end;
 
 procedure setup();
 begin
- common_setup();
+ window_setup();
+ dialog_setup();
+ interface_setup();
  language_setup();
 end;
 
