@@ -5,7 +5,7 @@ unit sffshellcode;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Dialogs, ExtCtrls, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Dialogs, ExtCtrls, StdCtrls, LazFileUtils;
 
 type
 
@@ -39,24 +39,18 @@ implementation
 
 {$R *.lfm}
 
-function get_path(): string;
-begin
- get_path:=ExtractFilePath(Application.ExeName);
-end;
-
-function convert_file_name(source:string): string;
+function convert_file_name(const source:string): string;
 var target:string;
 begin
  target:=source;
  if Pos(' ',source)>0 then
  begin
-  target:='"';
-  target:=target+source+'"';
+  target:='"'+source+source+'"';
  end;
  convert_file_name:=target;
 end;
 
-function execute_program(executable:string;argument:string):Integer;
+function execute_program(const executable:string;const argument:string):Integer;
 var code:Integer;
 begin
  try
@@ -67,10 +61,31 @@ begin
  execute_program:=code;
 end;
 
+function get_options():string;
+var options:string;
+begin
+ options:='-i -p ';
+ if Form1.CheckBox1.Checked=True then options:=options+'-f ';
+ if Form1.CheckBox2.Checked=True then options:=options+'-1 ';
+ if Form1.CheckBox3.Checked=True then options:=options+'-d ';
+ if Form1.CheckBox4.Checked=True then options:=options+'-8 ';
+ if Form1.CheckBox5.Checked=True then options:=options+'-x ';
+ if Form1.CheckBox6.Checked=True then options:=options+'-n ';
+ get_options:=options;
+end;
+
+procedure do_job(const target:string);
+var backend,options:string;
+begin
+ backend:=ExtractFilePath(Application.ExeName)+'sffextract.exe';
+ options:=get_options()+convert_file_name(target);
+ if execute_program(backend,options)=-1 then ShowMessage('Can not run an external program');
+end;
+
 procedure window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Form1.Caption:='SFFEXTRACT SHELL 2.6.6';
+ Form1.Caption:='SFFEXTRACT SHELL 2.6.7';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -114,27 +129,6 @@ begin
  dialog_setup();
  interface_setup();
  language_setup();
-end;
-
-function get_options():string;
-var options:string;
-begin
- options:='-i -p ';
- if Form1.CheckBox1.Checked=True then options:=options+'-f ';
- if Form1.CheckBox2.Checked=True then options:=options+'-1 ';
- if Form1.CheckBox3.Checked=True then options:=options+'-d ';
- if Form1.CheckBox4.Checked=True then options:=options+'-8 ';
- if Form1.CheckBox5.Checked=True then options:=options+'-x ';
- if Form1.CheckBox6.Checked=True then options:=options+'-n ';
- get_options:=options;
-end;
-
-procedure do_job(target:string);
-var backend,options:string;
-begin
- backend:=get_path()+'sffextract';
- options:=get_options()+convert_file_name(target);
- if execute_program(backend,options)=-1 then ShowMessage('Cant run an external program');
 end;
 
 { TForm1 }
