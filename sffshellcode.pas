@@ -45,7 +45,7 @@ begin
  target:=source;
  if Pos(' ',source)>0 then
  begin
-  target:='"'+source+source+'"';
+  target:='"'+source+'"';
  end;
  convert_file_name:=target;
 end;
@@ -85,7 +85,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Form1.Caption:='SFFEXTRACT SHELL 2.6.7';
+ Form1.Caption:='SFFEXTRACT SHELL 2.6.8';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
