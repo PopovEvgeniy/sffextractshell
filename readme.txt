@@ -44,4 +44,4 @@ Change log
 2.6.5 – Small changes.
 2.6.5.1 – Documentation updated.
 2.6.6 – 2.6.9 – Small changes.
-2.6.6.1 – Documentation updated.
+2.6.9.1 – Documentation updated.
