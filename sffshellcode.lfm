@@ -1,13 +1,13 @@
 object Form1: TForm1
-  Left = 151
+  Left = 243
   Height = 315
-  Top = 155
+  Top = 172
   Width = 606
   Caption = 'Form1'
   ClientHeight = 315
   ClientWidth = 606
   OnCreate = FormCreate
-  LCLVersion = '2.2.6.0'
+  LCLVersion = '3.6.0.0'
   object LabeledEdit1: TLabeledEdit
     Left = 72
     Height = 23
@@ -15,7 +15,7 @@ object Form1: TForm1
     Width = 408
     EditLabel.Height = 15
     EditLabel.Width = 408
-    EditLabel.Caption = 'File'
+    EditLabel.Caption = 'The file'
     EditLabel.ParentColor = False
     TabOrder = 0
     Text = 'LabeledEdit1'
@@ -27,31 +27,31 @@ object Form1: TForm1
     Top = 36
     Width = 91
     Caption = 'Open'
-    OnClick = Button1Click
     TabOrder = 1
+    OnClick = Button1Click
   end
   object CheckBox1: TCheckBox
     Left = 16
     Height = 19
     Top = 88
-    Width = 82
-    Caption = 'Ignore error'
+    Width = 96
+    Caption = 'Ignore an error'
     TabOrder = 2
   end
   object CheckBox2: TCheckBox
     Left = 16
     Height = 19
     Top = 120
-    Width = 116
-    Caption = 'Use shared palette'
+    Width = 134
+    Caption = 'Use the shared palette'
     TabOrder = 3
   end
   object CheckBox3: TCheckBox
     Left = 16
     Height = 19
     Top = 152
-    Width = 152
-    Caption = 'Put sprite in subdirectory'
+    Width = 179
+    Caption = 'Put a sprite in the subdirectory'
     TabOrder = 4
   end
   object Button2: TButton
@@ -60,14 +60,14 @@ object Form1: TForm1
     Top = 280
     Width = 127
     Caption = 'Extract'
-    OnClick = Button2Click
     TabOrder = 5
+    OnClick = Button2Click
   end
   object CheckBox4: TCheckBox
     Left = 16
     Height = 19
     Top = 184
-    Width = 126
+    Width = 124
     Caption = 'Use short file names'
     TabOrder = 6
   end
@@ -75,7 +75,7 @@ object Form1: TForm1
     Left = 16
     Height = 19
     Top = 216
-    Width = 230
+    Width = 227
     Caption = 'Use hexadecimal numbers as file names'
     TabOrder = 7
   end
@@ -83,8 +83,8 @@ object Form1: TForm1
     Left = 16
     Height = 19
     Top = 245
-    Width = 209
-    Caption = 'File designed for MUGEN 2001.04.14'
+    Width = 241
+    Caption = 'This file is designed for MUGEN 2001.04.14'
     TabOrder = 8
   end
   object OpenDialog1: TOpenDialog

@@ -84,7 +84,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Form1.Caption:='SFFEXTRACT SHELL 2.6.9';
+ Form1.Caption:='SFFEXTRACT SHELL 2.7';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
@@ -110,15 +110,15 @@ end;
 
 procedure language_setup();
 begin
- Form1.LabeledEdit1.EditLabel.Caption:='File';
+ Form1.LabeledEdit1.EditLabel.Caption:='The file';
  Form1.Button1.Caption:='Open';
  Form1.Button2.Caption:='Extract';
- Form1.CheckBox1.Caption:='Igrone error';
- Form1.CheckBox2.Caption:='Use shared palette';
- Form1.CheckBox3.Caption:='Put sprites in subdirectory';
+ Form1.CheckBox1.Caption:='Igrone an error';
+ Form1.CheckBox2.Caption:='Use the shared palette';
+ Form1.CheckBox3.Caption:='Put a sprites in the subdirectory';
  Form1.CheckBox4.Caption:='Use short file names';
  Form1.CheckBox5.Caption:='Use hexadecimal numbers as file names';
- Form1.CheckBox6.Caption:='File designed for MUGEN 2001.04.14';
+ Form1.CheckBox6.Caption:='This file is designed for MUGEN 2001.04.14';
  Form1.OpenDialog1.Title:='Open a mugen graphic container';
 end;
 
