@@ -1,6 +1,6 @@
                                 SFFEXTRACT SHELL
 
-                                  Version 2.7
+                                  Version 2.7.0.1
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -20,7 +20,7 @@ This program is distributed under GNU GENERAL PUBLIC LICENSE.
 Prepare
 
 You can download SFF EXTRACT here: http://network.mugenguild.com/winane/software/index.html
-Put the executable file of SFF EXTRACT to SFFEXTRACT SHELL directory before the first start.
+Put the executable file of SFF EXTRACT to the SFFEXTRACT SHELL directory before the first start.
 
 Contact
 
@@ -33,16 +33,17 @@ It can be compiled under Lazarus 3.6 or higher.
 
 Change log
 
-1.0 – 2.5.4 – Old unstable builds.
-2.5.5 – The program was totally rewritten.
-2.5.6 – Small changes.
-2.5.7 – Russian localization is removed.
-2.5.8 – Small changes.
-2.5.9 – Small changes. Windows 9x support has been dropped.
-2.6 – 2.6.3 – Small changes.
-2.6.4 – Small bug fixed.
-2.6.5 – Small changes.
-2.6.5.1 – Documentation updated.
-2.6.6 – 2.6.9 – Small changes.
-2.6.9.1 – Documentation updated.
-2.7 – Small changes.
+1.0-2.5.4: The old unstable builds.
+2.5.5: The program was totally rewritten.
+2.5.6: The small changes.
+2.5.7: Russian localization is removed.
+2.5.8: The small changes.
+2.5.9: The small changes. Windows 9x support has been dropped.
+2.6-2.6.3: The small changes.
+2.6.4: A small bug is fixed.
+2.6.5: The small changes.
+2.6.5.1: Documentation updated.
+2.6.6-2.6.9: The small changes.
+2.6.9.1: Documentation updated.
+2.7: The small changes.
+2.7.0.1: Documentation updated.
