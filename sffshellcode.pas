@@ -84,7 +84,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Form1.Caption:='SFFEXTRACT SHELL 2.7';
+ Form1.Caption:='SFFEXTRACT SHELL 2.7.1';
  Form1.BorderStyle:=bsDialog;
  Form1.Font.Name:=Screen.MenuFont.Name;
  Form1.Font.Size:=14;
