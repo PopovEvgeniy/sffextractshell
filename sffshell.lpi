@@ -77,62 +77,137 @@
       <Unit1>
         <Filename Value="sffshellcode.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="MainWindow"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="74"/>
-        <CursorPos X="40" Y="87"/>
+        <CursorPos Y="8"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="11" HistoryIndex="10">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="154" Column="23" TopLine="143"/>
+        <Caret Line="155" Column="23" TopLine="144"/>
       </Position1>
       <Position2>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="155" Column="23" TopLine="144"/>
+        <Caret Line="156" Column="23" TopLine="145"/>
       </Position2>
       <Position3>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="156" Column="23" TopLine="145"/>
+        <Caret Line="158" Column="23" TopLine="147"/>
       </Position3>
       <Position4>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="158" Column="23" TopLine="147"/>
+        <Caret Line="96" Column="40" TopLine="76"/>
       </Position4>
       <Position5>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="96" Column="40" TopLine="76"/>
+        <Caret Line="95" Column="40" TopLine="85"/>
       </Position5>
       <Position6>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="95" Column="40" TopLine="85"/>
+        <Caret Line="8" Column="29"/>
       </Position6>
       <Position7>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="8" Column="29"/>
+        <Caret Line="16" Column="30"/>
       </Position7>
       <Position8>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="16" Column="30"/>
+        <Caret Line="171" Column="53" TopLine="160"/>
       </Position8>
       <Position9>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="171" Column="53" TopLine="160"/>
+        <Caret Line="176" TopLine="161"/>
       </Position9>
       <Position10>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="176" TopLine="161"/>
+        <Caret Line="113" Column="46" TopLine="110"/>
       </Position10>
       <Position11>
         <Filename Value="sffshellcode.pas"/>
-        <Caret Line="113" Column="46" TopLine="110"/>
+        <Caret Line="87" Column="45" TopLine="74"/>
       </Position11>
+      <Position12>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="106" Column="13" TopLine="99"/>
+      </Position12>
+      <Position13>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="152" Column="20" TopLine="140"/>
+      </Position13>
+      <Position14>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="103" Column="13" TopLine="96"/>
+      </Position14>
+      <Position15>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="114" Column="13" TopLine="102"/>
+      </Position15>
+      <Position16>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="104" Column="13" TopLine="96"/>
+      </Position16>
+      <Position17>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="142" Column="13" TopLine="130"/>
+      </Position17>
+      <Position18>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="95" Column="13" TopLine="88"/>
+      </Position18>
+      <Position19>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="147" Column="85" TopLine="135"/>
+      </Position19>
+      <Position20>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="67" Column="16" TopLine="60"/>
+      </Position20>
+      <Position21>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="116" Column="53" TopLine="104"/>
+      </Position21>
+      <Position22>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="68" Column="16" TopLine="61"/>
+      </Position22>
+      <Position23>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="117" Column="13" TopLine="108"/>
+      </Position23>
+      <Position24>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="69" Column="16" TopLine="62"/>
+      </Position24>
+      <Position25>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="118" Column="13" TopLine="109"/>
+      </Position25>
+      <Position26>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="70" Column="16" TopLine="63"/>
+      </Position26>
+      <Position27>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="119" Column="13" TopLine="107"/>
+      </Position27>
+      <Position28>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="71" Column="16" TopLine="65"/>
+      </Position28>
+      <Position29>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="120" Column="13" TopLine="108"/>
+      </Position29>
+      <Position30>
+        <Filename Value="sffshellcode.pas"/>
+        <Caret Line="72" Column="16" TopLine="66"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

@@ -15,7 +15,7 @@ uses
 begin
   Application.Title:='';
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TMainWindow, MainWindow);
   Application.Run;
 end.
 

@@ -5,34 +5,34 @@ unit sffshellcode;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Dialogs, ExtCtrls, StdCtrls, LazFileUtils;
+  Classes, SysUtils, Forms, Controls, Dialogs, ExtCtrls, StdCtrls;
 
 type
 
-  { TForm1 }
+  { TMainWindow }
 
-  TForm1 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    CheckBox1: TCheckBox;
-    CheckBox2: TCheckBox;
-    CheckBox3: TCheckBox;
-    CheckBox4: TCheckBox;
-    CheckBox5: TCheckBox;
-    CheckBox6: TCheckBox;
-    LabeledEdit1: TLabeledEdit;
-    OpenDialog1: TOpenDialog;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+  TMainWindow = class(TForm)
+    OpenButton: TButton;
+    ExtractButton: TButton;
+    ErrorCheckBox: TCheckBox;
+    PaletteCheckBox: TCheckBox;
+    SubDirectoryCheckBox: TCheckBox;
+    ShortNamesCheckBox: TCheckBox;
+    HexaDecimalCheckBox: TCheckBox;
+    ModernMugenCheckBox: TCheckBox;
+    FileField: TLabeledEdit;
+    OpenDialog: TOpenDialog;
+    procedure OpenButtonClick(Sender: TObject);
+    procedure ExtractButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure LabeledEdit1Change(Sender: TObject);
+    procedure FileFieldChange(Sender: TObject);
   private
     { private declarations }
   public
     { public declarations }
   end; 
 
-var Form1: TForm1;
+var MainWindow: TMainWindow;
 
 implementation
 
@@ -64,12 +64,12 @@ function get_options():string;
 var options:string;
 begin
  options:='-i -p ';
- if Form1.CheckBox1.Checked=True then options:=options+'-f ';
- if Form1.CheckBox2.Checked=True then options:=options+'-1 ';
- if Form1.CheckBox3.Checked=True then options:=options+'-d ';
- if Form1.CheckBox4.Checked=True then options:=options+'-8 ';
- if Form1.CheckBox5.Checked=True then options:=options+'-x ';
- if Form1.CheckBox6.Checked=True then options:=options+'-n ';
+ if MainWindow.ErrorCheckBox.Checked=True then options:=options+'-f ';
+ if MainWindow.PaletteCheckBox.Checked=True then options:=options+'-1 ';
+ if MainWindow.SubDirectoryCheckBox.Checked=True then options:=options+'-d ';
+ if MainWindow.ShortNamesCheckBox.Checked=True then options:=options+'-8 ';
+ if MainWindow.HexaDecimalCheckBox.Checked=True then options:=options+'-x ';
+ if MainWindow.ModernMugenCheckBox.Checked=True then options:=options+'-n ';
  get_options:=options;
 end;
 
@@ -84,42 +84,42 @@ end;
 procedure window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Form1.Caption:='SFFEXTRACT SHELL 2.7.1';
- Form1.BorderStyle:=bsDialog;
- Form1.Font.Name:=Screen.MenuFont.Name;
- Form1.Font.Size:=14;
+ MainWindow.Caption:='SFFEXTRACT SHELL 2.7.3';
+ MainWindow.BorderStyle:=bsDialog;
+ MainWindow.Font.Name:=Screen.MenuFont.Name;
+ MainWindow.Font.Size:=14;
 end;
 
 procedure dialog_setup();
 begin
- Form1.OpenDialog1.InitialDir:='';
- Form1.OpenDialog1.DefaultExt:='*.sff';
- Form1.OpenDialog1.FileName:='*.sff';
- Form1.OpenDialog1.Filter:='Sff file|*.sff';
+ MainWindow.OpenDialog.InitialDir:='';
+ MainWindow.OpenDialog.DefaultExt:='*.sff';
+ MainWindow.OpenDialog.FileName:='*.sff';
+ MainWindow.OpenDialog.Filter:='Sff file|*.sff';
 end;
 
 procedure interface_setup();
 begin
- Form1.Button1.ShowHint:=False;
- Form1.Button2.ShowHint:=Form1.Button1.ShowHint;
- Form1.Button2.Enabled:=False;
- Form1.LabeledEdit1.Enabled:=Form1.Button2.Enabled;
- Form1.LabeledEdit1.LabelPosition:=lpLeft;
- Form1.LabeledEdit1.Text:='';
+ MainWindow.OpenButton.ShowHint:=False;
+ MainWindow.ExtractButton.ShowHint:=MainWindow.OpenButton.ShowHint;
+ MainWindow.ExtractButton.Enabled:=False;
+ MainWindow.FileField.Enabled:=MainWindow.ExtractButton.Enabled;
+ MainWindow.FileField.LabelPosition:=lpLeft;
+ MainWindow.FileField.Text:='';
 end;
 
 procedure language_setup();
 begin
- Form1.LabeledEdit1.EditLabel.Caption:='The file';
- Form1.Button1.Caption:='Open';
- Form1.Button2.Caption:='Extract';
- Form1.CheckBox1.Caption:='Igrone an error';
- Form1.CheckBox2.Caption:='Use the shared palette';
- Form1.CheckBox3.Caption:='Put a sprites in the subdirectory';
- Form1.CheckBox4.Caption:='Use short file names';
- Form1.CheckBox5.Caption:='Use hexadecimal numbers as file names';
- Form1.CheckBox6.Caption:='This file is designed for MUGEN 2001.04.14';
- Form1.OpenDialog1.Title:='Open a mugen graphic container';
+ MainWindow.FileField.EditLabel.Caption:='The file';
+ MainWindow.OpenButton.Caption:='Open';
+ MainWindow.ExtractButton.Caption:='Extract';
+ MainWindow.ErrorCheckBox.Caption:='Igrone an errors';
+ MainWindow.PaletteCheckBox.Caption:='Use the shared palette';
+ MainWindow.SubDirectoryCheckBox.Caption:='Put a sprites in the subdirectory';
+ MainWindow.ShortNamesCheckBox.Caption:='Use short file names';
+ MainWindow.HexaDecimalCheckBox.Caption:='Use hexadecimal numbers as file names';
+ MainWindow.ModernMugenCheckBox.Caption:='This file is designed for MUGEN 2001.04.14';
+ MainWindow.OpenDialog.Title:='Open a mugen graphic container';
 end;
 
 procedure setup();
@@ -130,26 +130,26 @@ begin
  language_setup();
 end;
 
-{ TForm1 }
+{ TMainWindow }
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TMainWindow.FormCreate(Sender: TObject);
 begin
 setup();
 end;
 
-procedure TForm1.LabeledEdit1Change(Sender: TObject);
+procedure TMainWindow.FileFieldChange(Sender: TObject);
 begin
- Form1.Button2.Enabled:=Form1.LabeledEdit1.Text<>'';
+ MainWindow.ExtractButton.Enabled:=MainWindow.FileField.Text<>'';
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TMainWindow.OpenButtonClick(Sender: TObject);
 begin
- if Form1.OpenDialog1.Execute()=True then Form1.LabeledEdit1.Text:=Form1.OpenDialog1.FileName;
+ if MainWindow.OpenDialog.Execute()=True then MainWindow.FileField.Text:=MainWindow.OpenDialog.FileName;
 end;
 
-procedure TForm1.Button2Click(Sender: TObject);
+procedure TMainWindow.ExtractButtonClick(Sender: TObject);
 begin
- do_job(Form1.LabeledEdit1.Text);
+ do_job(MainWindow.FileField.Text);
 end;
 
 end.

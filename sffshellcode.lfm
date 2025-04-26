@@ -1,14 +1,14 @@
-object Form1: TForm1
+object MainWindow: TMainWindow
   Left = 243
   Height = 315
   Top = 172
   Width = 606
-  Caption = 'Form1'
+  Caption = 'SFFEXTRACT SHELL'
   ClientHeight = 315
   ClientWidth = 606
-  LCLVersion = '4.0.0.1'
+  LCLVersion = '4.0.0.3'
   OnCreate = FormCreate
-  object LabeledEdit1: TLabeledEdit
+  object FileField: TLabeledEdit
     Left = 72
     Height = 23
     Top = 40
@@ -18,27 +18,27 @@ object Form1: TForm1
     EditLabel.Caption = 'The file'
     EditLabel.ParentColor = False
     TabOrder = 0
-    Text = 'LabeledEdit1'
-    OnChange = LabeledEdit1Change
+    Text = 'FileField'
+    OnChange = FileFieldChange
   end
-  object Button1: TButton
+  object OpenButton: TButton
     Left = 488
     Height = 25
     Top = 36
     Width = 91
     Caption = 'Open'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = OpenButtonClick
   end
-  object CheckBox1: TCheckBox
+  object ErrorCheckBox: TCheckBox
     Left = 16
     Height = 19
     Top = 88
-    Width = 96
-    Caption = 'Ignore an error'
+    Width = 101
+    Caption = 'Ignore an errors'
     TabOrder = 2
   end
-  object CheckBox2: TCheckBox
+  object PaletteCheckBox: TCheckBox
     Left = 16
     Height = 19
     Top = 120
@@ -46,7 +46,7 @@ object Form1: TForm1
     Caption = 'Use the shared palette'
     TabOrder = 3
   end
-  object CheckBox3: TCheckBox
+  object SubDirectoryCheckBox: TCheckBox
     Left = 16
     Height = 19
     Top = 152
@@ -54,16 +54,16 @@ object Form1: TForm1
     Caption = 'Put a sprite in the subdirectory'
     TabOrder = 4
   end
-  object Button2: TButton
+  object ExtractButton: TButton
     Left = 88
     Height = 25
     Top = 280
     Width = 127
     Caption = 'Extract'
     TabOrder = 5
-    OnClick = Button2Click
+    OnClick = ExtractButtonClick
   end
-  object CheckBox4: TCheckBox
+  object ShortNamesCheckBox: TCheckBox
     Left = 16
     Height = 19
     Top = 184
@@ -71,7 +71,7 @@ object Form1: TForm1
     Caption = 'Use short file names'
     TabOrder = 6
   end
-  object CheckBox5: TCheckBox
+  object HexaDecimalCheckBox: TCheckBox
     Left = 16
     Height = 19
     Top = 216
@@ -79,7 +79,7 @@ object Form1: TForm1
     Caption = 'Use hexadecimal numbers as file names'
     TabOrder = 7
   end
-  object CheckBox6: TCheckBox
+  object ModernMugenCheckBox: TCheckBox
     Left = 16
     Height = 19
     Top = 245
@@ -87,7 +87,7 @@ object Form1: TForm1
     Caption = 'This file is designed for MUGEN 2001.04.14'
     TabOrder = 8
   end
-  object OpenDialog1: TOpenDialog
+  object OpenDialog: TOpenDialog
     Left = 376
     Top = 264
   end
