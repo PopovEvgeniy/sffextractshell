@@ -1,33 +1,30 @@
                                 SFFEXTRACT SHELL
 
-                                  Version 2.7.3.1
+                                  Version 2.7.4
 
                          This software was made by Popov Evgeniy Alekseyevich
 
-System requirements
+System requirements.
 
 Windows 2000 or higher for 32-bit systems
 Windows Vista or higher for 64-bit systems
 
-Program description
+The program description.
 
 This program is a graphic shell for SFF EXTRACT.
+You can download it here: http://network.mugenguild.com/winane/software/index.html
+Put the executable file of SFF EXTRACT in the SFFEXTRACT SHELL directory before the first start.
 
 License
 
 This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 
-Prepare
-
-You can download SFF EXTRACT here: http://network.mugenguild.com/winane/software/index.html
-Put the executable file of SFF EXTRACT in the SFFEXTRACT SHELL directory before the first start.
-
-About program modification
+The source code.
 
 The code is included in the source.zip archive.
-It can be compiled under Lazarus 4.0 RC3 or higher.
+It can be compiled under Lazarus 4.2 or higher.
 
-Change log
+Version history.
 
 1.0-2.5.4: The old unstable builds.
 2.5.5: The program was totally rewritten.
@@ -47,3 +44,4 @@ Change log
 2.7.2: The source code was recompiled under Lazarus 4.0 RC3.
 2.7.3: The small changes.
 2.7.3.1: The documentation has been updated.
+2.7.4: The source code was recompiled under Lazarus 4.2.

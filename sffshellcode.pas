@@ -84,7 +84,7 @@ end;
 procedure window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- MainWindow.Caption:='SFFEXTRACT SHELL 2.7.3';
+ MainWindow.Caption:='SFFEXTRACT SHELL 2.7.4';
  MainWindow.BorderStyle:=bsDialog;
  MainWindow.Font.Name:=Screen.MenuFont.Name;
  MainWindow.Font.Size:=14;

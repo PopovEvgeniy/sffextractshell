@@ -6,7 +6,7 @@ object MainWindow: TMainWindow
   Caption = 'SFFEXTRACT SHELL'
   ClientHeight = 315
   ClientWidth = 606
-  LCLVersion = '4.0.0.3'
+  LCLVersion = '4.2.0.0'
   OnCreate = FormCreate
   object FileField: TLabeledEdit
     Left = 72
