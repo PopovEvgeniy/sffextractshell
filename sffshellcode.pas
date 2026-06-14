@@ -1,11 +1,16 @@
-unit sffshellcode; 
+unit sffshellcode;
 
-{$mode objfpc}{$H+}
+{
+ This software was made by Popov Evgeniy Alekseyevich.
+ It is distributed under the GNU GENERAL PUBLIC LICENSE (Version 2 or higher).
+}
+
+{$mode objfpc}
+{$H+}
 
 interface
 
-uses
-  Classes, SysUtils, Forms, Controls, Dialogs, ExtCtrls, StdCtrls;
+uses Classes, SysUtils, Forms, Controls, Dialogs, ExtCtrls, StdCtrls;
 
 type
 
@@ -27,7 +32,13 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FileFieldChange(Sender: TObject);
   private
-    { private declarations }
+    function get_options():string;
+    procedure do_job(const target:string);
+    procedure window_setup();
+    procedure dialog_setup();
+    procedure interface_setup();
+    procedure language_setup();
+    procedure setup();
   public
     { public declarations }
   end; 
@@ -60,20 +71,20 @@ begin
  execute_program:=code;
 end;
 
-function get_options():string;
+function TMainWindow.get_options():string;
 var options:string;
 begin
  options:='-i -p ';
- if MainWindow.ErrorCheckBox.Checked=True then options:=options+'-f ';
- if MainWindow.PaletteCheckBox.Checked=True then options:=options+'-1 ';
- if MainWindow.SubDirectoryCheckBox.Checked=True then options:=options+'-d ';
- if MainWindow.ShortNamesCheckBox.Checked=True then options:=options+'-8 ';
- if MainWindow.HexaDecimalCheckBox.Checked=True then options:=options+'-x ';
- if MainWindow.ModernMugenCheckBox.Checked=True then options:=options+'-n ';
+ if Self.ErrorCheckBox.Checked=True then options:=options+'-f ';
+ if Self.PaletteCheckBox.Checked=True then options:=options+'-1 ';
+ if Self.SubDirectoryCheckBox.Checked=True then options:=options+'-d ';
+ if Self.ShortNamesCheckBox.Checked=True then options:=options+'-8 ';
+ if Self.HexaDecimalCheckBox.Checked=True then options:=options+'-x ';
+ if Self.ModernMugenCheckBox.Checked=True then options:=options+'-n ';
  get_options:=options;
 end;
 
-procedure do_job(const target:string);
+procedure TMainWindow.do_job(const target:string);
 var backend,options:string;
 begin
  backend:=ExtractFilePath(Application.ExeName)+'sffextract.exe';
@@ -81,75 +92,75 @@ begin
  if execute_program(backend,options)=-1 then ShowMessage('Can not run an external program');
 end;
 
-procedure window_setup();
+procedure TMainWindow.window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- MainWindow.Caption:='SFFEXTRACT SHELL 2.7.4';
- MainWindow.BorderStyle:=bsDialog;
- MainWindow.Font.Name:=Screen.MenuFont.Name;
- MainWindow.Font.Size:=14;
+ Self.Caption:='SFFEXTRACT SHELL 2.7.5';
+ Self.BorderStyle:=bsDialog;
+ Self.Font.Name:=Screen.MenuFont.Name;
+ Self.Font.Size:=14;
 end;
 
-procedure dialog_setup();
+procedure TMainWindow.dialog_setup();
 begin
- MainWindow.OpenDialog.InitialDir:='';
- MainWindow.OpenDialog.DefaultExt:='*.sff';
- MainWindow.OpenDialog.FileName:='*.sff';
- MainWindow.OpenDialog.Filter:='Sff file|*.sff';
+ Self.OpenDialog.InitialDir:='';
+ Self.OpenDialog.DefaultExt:='*.sff';
+ Self.OpenDialog.FileName:='*.sff';
+ Self.OpenDialog.Filter:='Sff file|*.sff';
 end;
 
-procedure interface_setup();
+procedure TMainWindow.interface_setup();
 begin
- MainWindow.OpenButton.ShowHint:=False;
- MainWindow.ExtractButton.ShowHint:=MainWindow.OpenButton.ShowHint;
- MainWindow.ExtractButton.Enabled:=False;
- MainWindow.FileField.Enabled:=MainWindow.ExtractButton.Enabled;
- MainWindow.FileField.LabelPosition:=lpLeft;
- MainWindow.FileField.Text:='';
+ Self.OpenButton.ShowHint:=False;
+ Self.ExtractButton.ShowHint:=False;
+ Self.ExtractButton.Enabled:=False;
+ Self.FileField.Enabled:=False;
+ Self.FileField.LabelPosition:=lpLeft;
+ Self.FileField.Text:='';
 end;
 
-procedure language_setup();
+procedure TMainWindow.language_setup();
 begin
- MainWindow.FileField.EditLabel.Caption:='The file';
- MainWindow.OpenButton.Caption:='Open';
- MainWindow.ExtractButton.Caption:='Extract';
- MainWindow.ErrorCheckBox.Caption:='Igrone an errors';
- MainWindow.PaletteCheckBox.Caption:='Use the shared palette';
- MainWindow.SubDirectoryCheckBox.Caption:='Put a sprites in the subdirectory';
- MainWindow.ShortNamesCheckBox.Caption:='Use short file names';
- MainWindow.HexaDecimalCheckBox.Caption:='Use hexadecimal numbers as file names';
- MainWindow.ModernMugenCheckBox.Caption:='This file is designed for MUGEN 2001.04.14';
- MainWindow.OpenDialog.Title:='Open a mugen graphic container';
+ Self.FileField.EditLabel.Caption:='The file';
+ Self.OpenButton.Caption:='Open';
+ Self.ExtractButton.Caption:='Extract';
+ Self.ErrorCheckBox.Caption:='Igrone an errors';
+ Self.PaletteCheckBox.Caption:='Use the shared palette';
+ Self.SubDirectoryCheckBox.Caption:='Put a sprites in the subdirectory';
+ Self.ShortNamesCheckBox.Caption:='Use short file names';
+ Self.HexaDecimalCheckBox.Caption:='Use hexadecimal numbers as file names';
+ Self.ModernMugenCheckBox.Caption:='This file is designed for MUGEN 2001.04.14';
+ Self.OpenDialog.Title:='Open a mugen graphic container';
 end;
 
-procedure setup();
+procedure TMainWindow.setup();
 begin
- window_setup();
- dialog_setup();
- interface_setup();
- language_setup();
+ Self.window_setup();
+ Self.dialog_setup();
+ Self.interface_setup();
+ Self.language_setup();
 end;
 
 { TMainWindow }
 
 procedure TMainWindow.FormCreate(Sender: TObject);
 begin
-setup();
+ Self.setup();
 end;
 
 procedure TMainWindow.FileFieldChange(Sender: TObject);
 begin
- MainWindow.ExtractButton.Enabled:=MainWindow.FileField.Text<>'';
+ Self.ExtractButton.Enabled:=Self.FileField.Text<>'';
 end;
 
 procedure TMainWindow.OpenButtonClick(Sender: TObject);
 begin
- if MainWindow.OpenDialog.Execute()=True then MainWindow.FileField.Text:=MainWindow.OpenDialog.FileName;
+ if Self.OpenDialog.Execute()=True then Self.FileField.Text:=Self.OpenDialog.FileName;
 end;
 
 procedure TMainWindow.ExtractButtonClick(Sender: TObject);
 begin
- do_job(MainWindow.FileField.Text);
+ do_job(Self.FileField.Text);
 end;
 
 end.

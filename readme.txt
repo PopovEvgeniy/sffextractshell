@@ -1,6 +1,6 @@
                                 SFFEXTRACT SHELL
 
-                                  Version 2.7.4
+                                  Version 2.7.5
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -22,7 +22,7 @@ This program is distributed under the GNU GENERAL PUBLIC LICENSE.
 The source code.
 
 The code is included in the source.zip archive.
-It can be compiled under Lazarus 4.2 or higher.
+It can be compiled under Lazarus 4.8 or higher.
 
 Version history.
 
@@ -45,3 +45,4 @@ Version history.
 2.7.3: The small changes.
 2.7.3.1: The documentation has been updated.
 2.7.4: The source code was recompiled under Lazarus 4.2.
+2.7.5: The small changes.
