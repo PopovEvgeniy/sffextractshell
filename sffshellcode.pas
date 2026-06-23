@@ -81,21 +81,21 @@ begin
  if Self.ShortNamesCheckBox.Checked=True then options:=options+'-8 ';
  if Self.HexaDecimalCheckBox.Checked=True then options:=options+'-x ';
  if Self.ModernMugenCheckBox.Checked=True then options:=options+'-n ';
- get_options:=options;
+ Result:=options;
 end;
 
 procedure TMainWindow.do_job(const target:string);
 var backend,options:string;
 begin
  backend:=ExtractFilePath(Application.ExeName)+'sffextract.exe';
- options:=get_options()+convert_file_name(target);
- if execute_program(backend,options)=-1 then ShowMessage('Can not run an external program');
+ options:=Self.get_options()+convert_file_name(target);
+ if execute_program(backend,options)<>0 then ShowMessage('Cannot extract an images');
 end;
 
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Self.Caption:='SFFEXTRACT SHELL 2.7.5';
+ Self.Caption:='SFFEXTRACT SHELL 2.7.6';
  Self.BorderStyle:=bsDialog;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;
