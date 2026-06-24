@@ -89,13 +89,13 @@ var backend,options:string;
 begin
  backend:=ExtractFilePath(Application.ExeName)+'sffextract.exe';
  options:=Self.get_options()+convert_file_name(target);
- if execute_program(backend,options)<>0 then ShowMessage('Cannot extract an images');
+ if execute_program(backend,options)<>0 then ShowMessage('Cannot extract images');
 end;
 
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Self.Caption:='SFFEXTRACT SHELL 2.7.6';
+ Self.Caption:='SFFEXTRACT SHELL 2.7.7';
  Self.BorderStyle:=bsDialog;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;
@@ -124,13 +124,13 @@ begin
  Self.FileField.EditLabel.Caption:='The file';
  Self.OpenButton.Caption:='Open';
  Self.ExtractButton.Caption:='Extract';
- Self.ErrorCheckBox.Caption:='Igrone an errors';
+ Self.ErrorCheckBox.Caption:='Igrone errors';
  Self.PaletteCheckBox.Caption:='Use the shared palette';
  Self.SubDirectoryCheckBox.Caption:='Put a sprites in the subdirectory';
- Self.ShortNamesCheckBox.Caption:='Use short file names';
+ Self.ShortNamesCheckBox.Caption:='Use a short file names';
  Self.HexaDecimalCheckBox.Caption:='Use hexadecimal numbers as file names';
  Self.ModernMugenCheckBox.Caption:='This file is designed for MUGEN 2001.04.14';
- Self.OpenDialog.Title:='Open a mugen graphic container';
+ Self.OpenDialog.Title:='Open a Mugen graphic container';
 end;
 
 procedure TMainWindow.setup();
