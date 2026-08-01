@@ -57,7 +57,7 @@ begin
  begin
   target:='"'+source+'"';
  end;
- convert_file_name:=target;
+ Result:=target;
 end;
 
 function execute_program(const executable:string;const argument:string):Integer;
@@ -68,7 +68,7 @@ begin
  except
   code:=-1;
  end;
- execute_program:=code;
+ Result:=code;
 end;
 
 function TMainWindow.get_options():string;
@@ -95,7 +95,7 @@ end;
 procedure TMainWindow.window_setup();
 begin
  Application.Title:='SFFEXTRACT SHELL';
- Self.Caption:='SFFEXTRACT SHELL 2.7.7';
+ Self.Caption:='SFFEXTRACT SHELL 2.7.8';
  Self.BorderStyle:=bsDialog;
  Self.Font.Name:=Screen.MenuFont.Name;
  Self.Font.Size:=14;

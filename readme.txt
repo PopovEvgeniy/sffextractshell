@@ -1,6 +1,6 @@
                                 SFFEXTRACT SHELL
 
-                                  Version 2.7.7
+                                  Version 2.7.8
 
                          This software was made by Popov Evgeniy Alekseyevich
 
@@ -45,4 +45,4 @@ Version history.
 2.7.3: The small changes.
 2.7.3.1: The documentation has been updated.
 2.7.4: The source code was recompiled under Lazarus 4.2.
-2.7.5-2.7.7: The small changes.
+2.7.5-2.7.8: The small changes.
